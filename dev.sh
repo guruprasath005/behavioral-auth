@@ -89,6 +89,18 @@ sleep 1
 echo "[dev.sh] Starting capture session for user: $USER_ARG"
 echo "[dev.sh] Press Ctrl-C to stop everything."
 echo ""
+echo "┌─────────────────────────────────────────────────────────┐"
+echo "│  Shell monitoring: commands are captured via zshrc hook  │"
+echo "│                                                           │"
+echo "│  First time setup:                                        │"
+echo "│    python3 main.py --install-hook                         │"
+echo "│    source ~/.zshrc                                        │"
+echo "│                                                           │"
+echo "│  Every terminal you open AFTER that will be captured.    │"
+echo "│  Commands typed in THIS terminal are NOT captured         │"
+echo "│  (open a new terminal tab to test shell monitoring).      │"
+echo "└─────────────────────────────────────────────────────────┘"
+echo ""
 python3 main.py --user "$USER_ARG" ${EXTRA_ARGS[@]+"${EXTRA_ARGS[@]}"} || true
 
 cleanup
